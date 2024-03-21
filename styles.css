@@ -1,0 +1,437 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 95%;
+    background-color: lightslategrey; /* Color de fondo del menú */
+    z-index: 1000; /* Asegura que el menú esté en la parte superior */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-weight: bold;
+}
+
+h1 {
+    color: black;
+    font-size: 45px;
+}
+
+ul li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.active {
+    color: black;
+    text-decoration: none;
+}
+
+.active:hover {
+    color: aqua;
+}
+
+.header {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Imagenes/Fondo01.jpg);
+    background-size: cover;
+    width: auto;
+    height: 700px;
+    margin-bottom: 10px;
+}
+
+.header img {
+    width: 700px;
+    height: 700px;
+}
+
+/* Ajustes para el tamaño del texto */
+body {
+    font-size: 40px;
+    /* Tamaño base de la fuente */
+    background-color: gainsboro;
+    
+    
+}
+
+h2,
+h3,
+p,
+a,
+button {
+    font-size: 30px;
+    /* Tamaño de fuente para encabezados y párrafos */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h2,h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 50px;
+}
+
+.descripcion{
+    text-align: center;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.slider {
+    aspect-ratio: 18/10;
+    width: 50%;
+    position: relative;
+    display: flex;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+.slider img {
+    width: 100%;
+    left: 0;
+    position: sticky;
+    object-fit: cover;
+    border-radius: 5px;
+    scroll-snap-align: center;
+}
+
+.ubicacion-contenedor {
+    display: flex;
+    justify-content: center;
+}
+
+.ubicacion {
+    border: 0;
+    background-image: linear-gradient(150deg, #9500ff, #09f, #00DDFF);
+    border-radius: 8px;
+    color: #fff;
+    display: flex;/*inline-block; /* Cambiado a inline-block para que el tamaño del botón se ajuste al contenido */
+    font-size: 18px;
+    padding: 4px;/*10px 20px; /* Ajustado el padding para que sea más visible */
+    cursor: pointer;
+    transition: .3s;/*background-color 0.3s, transform 0.3s; /* Agregada la transición para el color de fondo y la escala */
+}
+
+.ubicacion span {
+    background-color: #111;
+    padding: 16px 24px;
+    border-radius: 6px;
+    transition: .3s; /*background-color 0.3s; /* Agregada la transición para el color de fondo */
+}
+
+.ubicacion:hover span {
+    background: none;
+    /*background-color: transparent; /* Cambiado a transparent para que el color de fondo del span se elimine en hover */
+}
+
+.ubicacion:active {
+    transform: scale(0.9);
+}
+
+.mapa-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.mapa{
+    width: 80%;
+    height: 100%;
+    aspect-ratio: 18/10
+}
+
+.precio {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-item {
+    border: 10px solid #000000;
+    /* Grosor del borde */
+    padding: 30px;
+    /* Reducir el espacio interno */
+    margin: 20px;
+    /* Reducir el margen */
+    width: calc(18% - 20px);
+    /* Ancho del 33.33% menos el espacio del margen */
+}
+
+.figure {
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.4s;
+    vertical-align: middle;
+}
+
+.menu-item p {
+    font-size: 26px;
+}
+
+.figure:hover img {
+    transform: scale(1.1);
+}
+
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.figure:hover .caption {
+    opacity: 1;
+}
+
+.hr {
+    background-color: black;
+}
+
+/* Estilos para los botones */
+button {
+    background-color: #4caf50;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    padding: 10px 20px;
+    /* Espacio interno */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cursor al pasar el ratón */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    transition: background-color 0.3s;
+    /* Transición suave al cambiar el color de fondo */
+}
+
+/* Estilo cuando se pasa el ratón por encima */
+button:hover {
+    background-color: #45a049;
+    /* Cambiar el color de fondo al pasar el ratón */
+}
+
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    /* Ajusta el ancho máximo del contenedor del formulario */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+textarea {
+    width: calc(100% - 22px);
+    /* Ajusta el ancho de los elementos de entrada de texto */
+    /* Resta 22px para compensar el padding y el borde */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+
+.redes-sociales ul {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los elementos */
+}
+
+.redes-sociales ul li {
+    list-style: none;
+    margin: 0 10px; /* Ajusta el margen entre los íconos */
+}
+
+.redes-sociales ul li a {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 80px;
+    font-size: 35px;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #fff;
+    transition: .5s;
+    position: relative; /* Añadido para corregir el posicionamiento del pseudo-elemento */
+}
+
+.redes-sociales ul li a .icon {
+    color: #262626;
+    transition: .5s;
+}
+
+.redes-sociales ul li a:hover .icon {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+.redes-sociales ul li a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: .5s;
+}
+
+.redes-sociales ul li a:hover:before {
+    top: 0;
+}
+
+/* Estilos para los íconos específicos */
+.redes-sociales ul li:nth-child(1) a:before {
+    background: #3b5999;
+}
+
+.redes-sociales ul li:nth-child(2) a:before {
+    background: linear-gradient(45deg, #ffde85 0%, #f7792a 30%, #f7504f 40%, #d82b81 60%, #d82b81 75%, #9536c2 100%);
+}
+  
+
+.fondo-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(Imagenes/Fondo02.jpg);
+    background-size: cover;
+    width: auto;
+    height: 1000px;
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Estilo interactivo */
+  tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+
+  .creditos{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .creditos p {
+    font-size: 14px;
+  }
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 30px;
+        /* Por ejemplo, ajusta el tamaño de fuente para dispositivos móviles */
+    }
+
+    .header img {
+        width: 100%;
+        /* Ajusta el ancho de la imagen del encabezado para que se adapte al tamaño de la pantalla */
+        height: auto;
+    }
+
+    .menu-item {
+        width: calc(100% - 40px);
+        /* Ajusta el ancho de los elementos del menú para dispositivos móviles */
+        margin: 10px;
+        /* Reducir el margen para dispositivos móviles */
+    }
+
+}
